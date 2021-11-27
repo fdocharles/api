@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
   res.send(items);
 });
 
-router.post("/:id", function (req, res, next) {
+router.get("/:id", function (req, res, next) {
   res.send(items.filter((x) => x.id == id));
 });
 
