@@ -15,10 +15,7 @@ router.get("/authenticate", function (req, res, next) {
 
   res.send({
     status: 200,
-    message: "Valid user",
-    data: {
-      id: user && user.length > 0 ? user[0].id : {},
-    },
+    data: user && user.length > 0 ? user[0] : {},
   });
 });
 
