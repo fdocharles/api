@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
   res.send("respond with a resource");
 });
 
-router.post("/authenticate", function (req, res, next) {
+router.get("/authenticate", function (req, res, next) {
   var user = users.filter(
     (x) =>
       x.username === req.query.username && x.password === req.query.password
