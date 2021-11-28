@@ -13,23 +13,13 @@ router.get("/authenticate", function (req, res, next) {
       x.username === req.query.username && x.password === req.query.password
   );
 
-  console.log("users", user);
-
-  if (user && user.length > 0) {
-    res.send({
-      status: 200,
-      message: "Valid user",
-      data: {
-        id: user.id,
-      },
-    });
-  } else {
-    res.send({
-      status: 401,
-      message: "Username or Password Invalid",
-      data: {},
-    });
-  }
+  res.send({
+    status: 200,
+    message: "Valid user",
+    data: {
+      id: user && user.length > 0 ? user[0].id : {},
+    },
+  });
 });
 
 module.exports = router;
