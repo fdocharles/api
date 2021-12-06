@@ -11,6 +11,8 @@ var itemRouter = require("./routes/item");
 
 var app = express();
 
+//data
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
